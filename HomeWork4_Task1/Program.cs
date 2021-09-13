@@ -6,18 +6,25 @@ using System.Threading.Tasks;
 
 namespace HomeWork4_Task1
 {
+    /*Щукин Андрей
+     * 1. Дан целочисленный массив из 20 элементов. Элементы массива могут принимать целые значения от –10 000 до 10 000 включительно. Заполнить случайными числами. Написать программу, позволяющую найти и вывести количество пар элементов массива, в которых только одно число делится на 3. В данной задаче под парой подразумевается два подряд идущих элемента массива.
+Например, для массива из пяти элементов: 6; 2; 9; –3; 6 ответ — 2.*/
     class Program
     {
         static void Main(string[] args)
         {
-            //int[] myArray = CreateRandomArray(-10000, 10000, 20);
+            //1
+            int[] myArray = CreateRandomArray(-10000, 10000, 20);
+            PrintArray(myArray);
+            Console.WriteLine("*************");
 
-            //PrintArray(myArray);
-
-            Console.WriteLine(Counter(new int[4] { 6, 2, 9, -3 }));
+            //2
+            int[] myArray2 = new int[4] { 6, 2, 9, -3 };
+            PrintArray(myArray2);
+            Console.WriteLine("Количество пар элементов массива, в которых только одно число делится на 3");
+            Console.WriteLine(Counter(myArray2));
 
             Console.ReadKey();
-
         }
 
         static int[] CreateRandomArray(int min, int max, int count)
@@ -34,11 +41,11 @@ namespace HomeWork4_Task1
 
         static void PrintArray(int[] array)
         {
+            Console.WriteLine($"Вывожу массив: ");
             foreach (var e in array)
             {
                 Console.WriteLine(e);
             }
-            Console.ReadKey();
         }
 
         static int Counter(int[] array)
